@@ -1,0 +1,18 @@
+Outline:
+  
+  Purpose:
+    I want to create a website that will allow people to anonymously upload and comment on photos. There may also be a ranking system to allow people to vote the pictures up and down.
+
+  Pages: 
+    There needs to be, at least, a main page that talks about what the website does, a page for people to upload the images, a page that allows people to veiw the pictures as a list or grid or something, and then an automatically generated page for each picture that contains the comments and the commenting system.
+
+  Database:
+    The database needs to do a couple of things. It needs to store the images (and all related data) and the comments (and all related data).
+    
+      Images: link to the picture, 
+              date/time uploaded,
+              title,
+
+    Comments: text of comment,
+              date/time posted,
+              image the comment belongs to
