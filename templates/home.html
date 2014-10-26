@@ -1,27 +1,68 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}Error{% endblock %}
-{% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle"
-      data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      </button>
-    <a class="navbar-brand" href="/">Badidea</a>
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-    </ul>
-  </div>
-</div>
-</div>
+{% block title %}Bad idea{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='home.css')}}">
 {% endblock %}
-<h1> Welcome to my website!</h1>
-<h3> Yes, I know this is a bad idea. </h3>
+  {% block body %}
+    
+    {% block navbar %}
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+          data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="/">Badidea</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/upload">Upload</a></li>
+          <li><a href="/browse">Browse</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    {% endblock %}
 
-{% block content %}
+    {% block content %}
+<div class="jumbotron">
+      <div class="container">
+        <h1>This is my bad idea!</h1>
+        <p>Who on earth would create a website for people to upload and comment on pictures in complete anonymity? Me! Woo!</p>
+        <p><a class="btn btn-primary btn-lg" role="button"> Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <!-- <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div> -->
+        <div class="col-md-6">
+          <h2>Upload now!</h2>
+          <p>Why not try uploading something? You've got nothing to lose. What's the worst that could happen? Just...give it a try...</p>
+          <p><a class="btn btn-default" href="#" role="button">Upload &raquo;</a></p>
+       </div>
+        <div class="col-md-6">
+          <h2>Browse the collection!</h2>
+          <p>This is a little riskier than just uploading your own pictures, but come one, you know you want to. What else do you have to be doing today? Just click browse and see what happens. It might be a good idea to have some eye bleach handy, just in case.</p>
+          <p><a class="btn btn-default" href="#" role="button">Browse &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+
+    <dir class="footer">
+    <hr>
+    <p>John Reese | October 2014 | Marlboro College</p>
+
+  {% endblock %}

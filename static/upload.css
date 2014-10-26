@@ -1,0 +1,18 @@
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(/static/another-thing.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.15em 0.15em 0.15em;
+}
+
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+}
+.footer p {
+  text-align: center;
+}
