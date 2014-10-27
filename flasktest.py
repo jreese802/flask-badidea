@@ -1,11 +1,16 @@
 # web midterm?
-from flask import Flask, render_template
-from flask.ext.bootstrap import Bootstrap
-from flask.ext.moment import Moment
+from Flask import Flask, render_template
+from Flask.ext.bootstrap import Bootstrap
+from Flask.ext.moment import Moment
+from werkzeug import secure_filename
+
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = set(['jpg','png','bmp','jpeg','gif'])
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def index():

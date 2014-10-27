@@ -31,19 +31,26 @@
     {% endblock navbar%}
 
     {% block content %}
-<div class="jumbotron">
-      <div class="container">
-        <h1>Contribute!</h1>
-        
-      </div>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Contribute!</h1>
+      
     </div>
+  </div>
 
   <div>
     <h2> I'm glad to see you're taking the plunge.</h2>
-
-    <dir class="footer">
-    <hr>
-    <p>John Reese | October 2014 | Marlboro College</p>
-    </div>
+  </div>
+  <div>
+    <p>The first step is to find something that you want to upload. Once you're done, click the button below.</p>
+    <form action="" method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+  </div>
+  <div class="footer">
+  <hr>
+  <p>John Reese | October 2014 | Marlboro College</p>
+  </div>
   {% endblock content %}
   {% endblock body %}
