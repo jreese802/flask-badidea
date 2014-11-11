@@ -1,4 +1,10 @@
 {% extends "bootstrap/base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+
 {% block title %}Bad idea{% endblock %}
 {% block styles %}
 {{super()}}
@@ -31,16 +37,20 @@
     {% endblock navbar%}
 
     {% block content %}
-    {% for image in image_list %}
-    <div class="col-lg-3 col-md-4 col-sm-6">
-      <a href={{url_for('uploaded_file', filename = image.image_filename)}}>
-        <div class="thumbnail">
-          <img src={{url_for('static', filename = 'upload/' + image.image_filename)}} alt="">
-        </div>
-      </a>
+    {% for comment in comment_list %}
+    <div class="col-md-6">
+      <div class='commentbox'>
+        <h2>{{comment.comment_date}}</h2>
+        <hr>
+        <p>{{comment.comment_content}}</p>
+      </div>
     </div>
     {% endfor %}
-    
+
+<div class="textbox">
+      {{ wtf.quick_form(form) }}
+</div>
+
     <div class="row">
       <div class="col-md-6">
         <hr>
