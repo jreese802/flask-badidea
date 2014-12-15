@@ -109,7 +109,7 @@ def upload_slash():
 # This is the function that gets called after an image is uploaded
 # It gives it a safe name, saves it, adds it to the database, then
 # returns the page for the image.
-@app.route('/images')
+@app.route('/images', methods=['GET','POST'])
 def process_image():
   file = request.files['file']
   if file and allowed_file(file.filename):
@@ -146,8 +146,12 @@ def uploaded_file(filename):
   image = (db.session.query(Image)
             .filter(Image.image_filename == filename).first())
   this_url = '/images/{}'.format(image.image_filename)
-  comments =  (db.session.query(Image.comments)
-                .filter(Image.image_filename == filename).all())
+  query =  (db.session.query(Image).join(Image.comments)
+              .filter(Image.image_filename==filename).first())
+  if query != None:
+    comments = query.comments
+  else:
+    comments = []
   # This is here to cause an error and launch the debugger.
   # 1/0
   return  render_template('filepage.html', image=image, comments=comments,
